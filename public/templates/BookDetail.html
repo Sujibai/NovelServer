@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>{{BookDetail["BookName"]}}-搜索结果</title>
+		<meta charset="utf-8">
+		<link rel="icon" href="/public/figures/icon.ico" type="image/x-icon"/>
+		<!-- <link rel="stylesheet" href="../css/clean.css">
+		<link rel="stylesheet" href="../css/BookDetail.css"> -->
+		<link rel="stylesheet" href="./public/css/clean.css">
+		<link rel="stylesheet" href="./public/css/BookDetail.css">
+	</head>
+
+<body>
+<center>
+<div id="Main">
+	<div id="BookDetailBox">
+		<img src="{{BookDetail["CoverUrl"]}}" class="BookImage"></img>
+		<div class="BookDetail">
+			<!-- <div class="BookName"><a href="{{Book["BookUrl"]}}">{{Book["BookName"]}}</a></div> -->
+			<div class="BookName">{{BookDetail["BookName"]}}</div>
+			<p class="BookAuthor">{{BookDetail["BookAuthor"]}}</p>
+			<p class="Description">{{BookDetail["Description"]}}</p>
+		</div>
+	</div>
+	<div id="FullContentTable">
+		<div id="ContentTableHeader">
+			<div class="HeaderBut" id="FullDescriptionBut">简介</div>
+			<div class="HeaderBut" id="ContentTableInfo">目录</div>
+		</div>
+		<div id="FullDescription">
+			{{BookDetail["Description"]}}
+		</div>
+		<div id="ContentTableDetail">
+			<ul>
+				{% for Chapter in ContTable["ChapterList"] %}
+					<!-- <li title="{{Chapter["ChapterTitle"]}}"><a class="ChaperLink" href="{{Chapter["ChapterUrl"]}}">{{Chapter["ChapterTitle"]}}</a></li> -->
+					<li title="{{Chapter["ChapterTitle"]}}"><a class="ChaperLink" href="/ChapterDetail?bookkey={{BookKey}}&chapterurl={{Chapter["ChapterUrl"]}}">{{Chapter["ChapterTitle"]}}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>
+</center>
+</body>
+<script type="text/javascript" src="/public/javascript/BookDetail.js"></script>
+</html>

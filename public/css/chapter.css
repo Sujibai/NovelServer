@@ -1,0 +1,32 @@
+#ChapterMain{
+  width: 900px;
+  margin-top: 50px;
+  margin-bottom: 200px;
+}
+
+.PageSelector{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.PageSelector>a{
+  color: gray;
+  margin-left: 15px;
+  font-size: 17px;
+}
+.PageSelector>a:hover{
+  color: brown;
+}
+
+.ChapterMainContent{
+  z-index: 2;
+  width: 900px;
+  white-space: pre-line;
+  text-align:left;
+  font-size: 20px;
+  line-height: 2;
+}
+.ChaperTitle{
+  font-size: 22px;
+  font-family: "SimHei";
+}

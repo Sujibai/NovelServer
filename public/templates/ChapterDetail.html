@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>{{ChapterTitle}}</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="./public/css/clean.css">
+		<link rel="stylesheet" href="/public/css/Chapter.css">
+	</head>
+
+<body>
+<center>
+	<div id="ChapterMain">
+		<h2 id="ChapterTitle">{{ChapterTitle}}</h2>
+		<div class="PageSelector">
+			<a href="/ChapterDetail?bookkey={{BookKey}}&chapterurl={{LastPage}}">上一章</a>
+			<a href="/BookDetail?bookkey={{BookKey}}">目录</a>
+			<a href="/ChapterDetail?bookkey={{BookKey}}&chapterurl={{NextPage}}">下一章</a>
+		</div>
+		<p class="ChapterMainContent">{{Content}}</p>
+		<div class="PageSelector">
+			<a href="/ChapterDetail?bookkey={{BookKey}}&chapterurl={{LastPage}}">上一章</a>
+			<a href="/BookDetail?bookkey={{BookKey}}">目录</a>
+			<a href="/ChapterDetail?bookkey={{BookKey}}&chapterurl={{NextPage}}">下一章</a>
+		</div>
+	</div>
+</center>
+</body>
+<!-- <script type="text/javascript" src="./public/javascript/code.js"></script> -->
+</html>

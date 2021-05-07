@@ -1,0 +1,19 @@
+html
+  head
+    title= BookTitle
+    meta(charset="utf-8")
+    link(rel="stylesheet" href="/public/css/master.css")
+  body
+  center
+    div(id="FloatMenu")
+    div(id="ContentTable")
+      div(id="ContentTableHeader")
+      div(id="ContentTableInfo") 目录
+      div(id="ContentTableCloseBut")
+        a#ContentTable
+      HR(id="BreakLine1")
+
+    div#ContentTableDetail
+      //- -for (let IndVol=0,IndVol<length(Volumes),IndVol++)
+      //- <details open>
+  script(type="text/javascript" src="/public/javascript/code.js")

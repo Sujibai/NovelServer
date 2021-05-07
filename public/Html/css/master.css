@@ -1,0 +1,164 @@
+.ChapterMainContent{
+  z-index: 2;
+  width: 700px;
+  white-space: pre-line;
+  text-align:left;
+  font-size: 20px;
+  line-height: 2;
+}
+.ChaperTitle{
+  font-size: 22px;
+  font-family: "SimHei";
+}
+
+#FloatMenu{
+  z-index: 10;
+  display: block;
+  position: fixed;
+  margin:0 auto;
+  top: 50px;
+  left:450px;
+  background-color: rgb(0, 0, 0);
+  width: 20px;
+  height: 20px;
+  /* overflow: auto; */
+}
+#FloatMenu:hover{
+  background-color: rgb(255, 55, 55);
+}
+
+#ContentTable{
+  /* backdrop-filter: blur(20px); */
+  z-index: 10;
+  display: none;
+  position: fixed;
+  margin:0 auto;
+  top: 5vh;
+  left:0;
+  right:0;
+  background-color: rgba(252, 251, 245, 1);
+  width: 800px;
+  height: 85vh;
+  box-shadow: 0 5px 20px rgb(0 0 0 / 20%);
+}
+#ContentTableHeader{
+  z-index: 10;
+  float: left;
+  position: relative;
+  margin:0 auto;
+  top: 0vh;
+  left:0;
+  right:0;
+  width: 780px;
+  height: 50px;
+  
+}
+#ContentTableInfo{
+  position: relative;
+  top: 5px;
+  width: 780px;
+  float: left;
+  color: rgb(88, 38, 38);
+  font-size: 24px;
+}
+#BreakLine1{
+  position: relative;
+  top: 15px;
+  color: black;
+}
+#ContentTableCloseBut a{
+  position: absolute;
+  top: 0px;
+  left: 750px;
+  width: 20px;
+  cursor: pointer;
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+}
+#ContentTableCloseBut a:after{
+  content: "\2717"; 
+  color: gray;
+}
+#ContentTableCloseBut a:hover:after{
+  color: brown;
+}
+
+#ContentTableDetail{
+  z-index: 10;
+  float: left;
+  position: sticky;
+  margin:0 auto;
+  top: 0px;;
+  left:0;
+  right:0;
+  padding-bottom: 10px;
+  width: 780px;
+  height: calc(100% - 60px);
+  overflow: auto;
+}
+
+
+#ContentTableDetail details{
+  float: left;
+  width: 780px;
+  margin-bottom: 10px;
+}
+#ContentTableDetail summary{
+  cursor: pointer;
+  font-size: 22px;
+  outline: none;
+}
+#ContentTableDetail details[open] summary {
+  color:brown;
+}
+#ContentTableDetail summary:hover{
+  color: rgb(255, 55, 55);
+}
+#ContentTableDetail details[open] summary:hover {
+  color: rgb(255, 55, 55);
+}
+#ContentTableDetail summary::-webkit-details-marker {
+  display: none;
+}
+#ContentTableDetail details summary:after {
+  margin-right:30px;
+  float: right;
+  content: "\1431"; 
+  color: black;
+}
+#ContentTableDetail details summary:hover:after {
+  color: rgb(255, 55, 55);
+}
+#ContentTableDetail details[open] summary:hover:after {
+  color: rgb(255, 55, 55);
+}
+#ContentTableDetail details[open] summary:after {
+  content: "\142F"; 
+  color:brown;
+}
+#ContentTableDetail ul{
+  display: block;
+  position: relative;
+  width:700px;
+}
+#ContentTableDetail li{
+  float: left;
+  display: block;
+  width:350px;
+}
+#ContentTableDetail li a{
+  float: left;
+  width: 300px;
+  white-space:pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align:left;
+  font-size: 20px;
+  color: black;
+  line-height: 2;
+  text-decoration: none;
+}
+#ContentTableDetail li a:hover{
+  color: brown;
+}

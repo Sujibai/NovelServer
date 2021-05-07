@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title>{{BookTitle}}</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="./public/css/master.css">
+	</head>
+
+<body>
+<center>
+	<div id="FloatMenu">
+
+	</div>
+
+	<div id="ContentTable">
+	<div id="ContentTableHeader">
+		<div id="ContentTableInfo">目录</div>
+		<div id="ContentTableCloseBut"><a href="#ContentTable"></a></div>
+		<HR id="BreakLine1">
+	</div>
+	<div id="ContentTableDetail">
+	{% for Volume in Volumes %}
+	<details open>
+	<summary>第{{Volume["VolumeIndex"]}}卷&nbsp&nbsp&nbsp {{Volume["VolumeName"]}} </summary>
+	<ul>
+		{% for Chapter in Volume["ChapterLists"] %}
+			<li title="{{Chapter["ChapterTitle"]}}"><a class="ChaperLink" href="#Volume{{Volume["VolumeIndex"]}}Chapter{{Chapter["ChapterIndex"]}}">{{Chapter["ChapterTitle"]}}</a></li>
+		{% endfor %}
+	</ul>
+	</details>
+	{% endfor %}
+	</div>
+	</div>
+
+	<h1>{{BookTitle}}</h1>
+	{% for Volume in Volumes %}
+	<div id="vol{{Volume["VolumeIndex"]}}">
+		<h2>{{Volume["VolumeName"]}}</h2>
+		{% for Chapter in Volume["ChapterLists"] %}
+			<div class="ChaperTitle" id="Volume{{Volume["VolumeIndex"]}}Chapter{{Chapter["ChapterIndex"]}}">{{Chapter["ChapterTitle"]}}</div>
+			<!-- <h3 id="Chapter{{Chapter["ChapterIndex"]}}">{{Chapter["ChapterTitle"]}}</h3> -->
+			<p class="ChapterMainContent">{{Chapter["ChapterMainContent"]}}</p>
+			<br>
+		{% endfor %}
+	</div>
+	{% endfor %}
+</center>
+</body>
+<script type="text/javascript" src="./public/javascript/code.js"></script>
+</html>

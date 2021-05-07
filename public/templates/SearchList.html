@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>{{KeyWord}}-搜索结果</title>
+		<meta charset="utf-8">
+		<link rel="icon" href="/public/figures/icon.ico" type="image/x-icon"/>
+		<link rel="stylesheet" href="/public/css/clean.css">
+		<link rel="stylesheet" href="/public/css/Search.css">
+	</head>
+
+<body>
+<center>
+	<div id="search">
+		<form action="/search/" target="_self" method="get">
+			<input type="text" id="text"  name="key" placeholder="{{KeyWord}}" autocomplete="off" />
+		</form>
+	</div>
+	<div id="SearchResult">
+		<ul>
+		{% for Book in SearchList["list"] %}
+			<li class="SearchResultItem" bookkey="{{Book["BookKey"]}}">
+				<img src="{{Book["BookCoverUrl"]}}" class="BookImage"></img>
+				<div class="BookDetail">
+					<div class="BookName"><a href="/BookDetail?bookkey={{Book["BookKey"]}}">{{Book["BookName"]}}</a></div>
+					<!-- <div class="BookName">{{Book["BookName"]}}</div> -->
+					<p class="BookAuthor">{{Book["BookAuthor"]}}</p>
+					<p class="Description">{{Book["Description"]}}</p>
+				</div>
+			</li>
+		{% endfor %}
+		</ul>
+	</div>
+</center>
+</body>
+<!-- <script type="text/javascript" src="/public/javascript/SearchResult.js"></script> -->
+</html>

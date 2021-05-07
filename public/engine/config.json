@@ -1,0 +1,69 @@
+{
+    "WebsiteName":"丹书铁卷",
+    "WebSiteHomeURL":"https://www.dstiejuan.com",
+    "SearchEngien":{
+        "GetMethod":"POST",
+        "PostParam":{
+            "PostUrl":"https://www.dstiejuan.com/search.html",
+            "PostFormKey":"searchkey"
+        },
+        "parser": {
+            "BookList":"//ul[@class=\"library\"]/li",
+            "BookName":"./a[@class=\"bookname\"]/text()",
+            "BookUrl":"./a[@class=\"bookname\"]/@href",
+            "BookAuthor": "./p/a[1]/text()",
+            "BookCoverUrl":"./a[@class=\"bookimg\"]/img/@src",
+            "WordCount": "./p[1]/text()[2]",
+            "Description": "./p[@class=\"intro\"]/text()" ,
+            "BookKey":{
+                "method":"re",
+                "FrontString":"https://www.dstiejuan.com/book/",
+                "BackString":".html"
+            }
+        }
+    },
+    "BookDetail":{
+        "constructor":{
+            "FrontString":"https://www.dstiejuan.com/book/",
+            "BackString":".html"
+        },
+        "parser":{
+            "BookName":"//div[@class=\"detail\"]/h1/text()",
+            "BookAuthor":"//div[@class=\"detail\"]/p//a[1]/text()",
+            "CoverUrl":"//div[@class=\"detail\"]/a/img/@src",
+            "FullContenUrl":"//div[@class=\"detail\"]/p[@class=\"action\"]/a[1]/@href",
+            "WordCount": [
+                "//div[@class=\"detail\"]/p[1]/text()[3]",
+                "substring-after(.,'字数：')"
+            ],
+            "LastUpdateDate": "//div[@class=\"detail\"]/p[4]/span/text()",
+            "TypeText": "//div[@class=\"detail\"]/p[1]/a[2]/text()",
+            "Description": "//div[@class=\"content\"]/p[@class=\"intro\"]/text()"
+        }
+    },
+    "FullContTable":{
+        "constructor":{
+            "FrontString":"https://www.dstiejuan.com/book/",
+            "BackString":"/"
+        },
+        "parser":{
+            "ChapterList":"//div[@class=\"read\"]/dl[2]/dd",
+            "ChapterTitle":"./a/text()",
+            "ChapterUrl":"./a/@href",
+            "ChapterUrlFront":"https://www.dstiejuan.com"
+        }
+    },
+    "ChapterDetail": {
+        "parser": {
+            "ChapterTitle":"//div[@class=\"area\"]/h1/text()",
+            "Content": "//div[@id=\"content\"]/p/text()",
+            "LastPage":"//div[@class=\"page\"]/a[1]/@href",
+            "NextPage":"//div[@class=\"page\"]/a[3]/@href"
+        },
+        "constructor":{
+            "LastPageFront":"https://www.dstiejuan.com",
+            "NextPageFront":"https://www.dstiejuan.com"
+        }
+
+    }
+}
